@@ -1,0 +1,40 @@
+{
+	"name": "Category Picker",
+	"version": "1.0.0",
+	"description": "Select categories and subcategories from Agility CMS lists",
+	"configValues": [
+		{
+			"name": "categoriesListReferenceName",
+			"label": "Categories List Reference Name",
+			"type": "string",
+			"description": "The reference name of the list containing categories. Default: ArticleCategories"
+		},
+		{
+			"name": "subcategoriesListReferenceName",
+			"label": "Sub-categories List Reference Name",
+			"type": "string",
+			"description": "The reference name of the list containing subcategories. Default: ArticleSubCategories"
+		},
+		{
+			"name": "categoryIdsFieldName",
+			"label": "Category IDs Field Name",
+			"type": "string",
+			"description": "The field name to store category IDs. Default: CategoriesIDs"
+		},
+		{
+			"name": "subcategoryIdsFieldName",
+			"label": "Sub-Category IDs Field Name",
+			"type": "string",
+			"description": "The field name to store subcategory IDs. Default: SubcategoriesIDs"
+		}
+	],
+	"capabilities": {
+		"fields": [
+			{
+				"name": "ArticleCategoryField",
+				"label": "Sub-Category Picker",
+				"description": "A specialized field for selecting categories and subcategories from Agility CMS lists"
+			}
+		]
+	}
+}
