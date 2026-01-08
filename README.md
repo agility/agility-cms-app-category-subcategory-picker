@@ -20,6 +20,16 @@ The Category Picker app is built using the [Agility Apps SDK v2](https://agility
 - **Responsive Design**: Automatically adjusts column count based on screen width (1-3 columns)
 - **Visual Feedback**: Clear indication of selected items with disabled checkboxes in read-only mode
 
+### Screenshots
+
+**Read-only view** — displays selected categories with their subcategories in a responsive multi-column layout. Click "Edit" to modify selections:
+
+![Read Only Mode](screenshots/read-mode.png)
+
+**Edit mode** — interactive checkboxes for selecting categories and subcategories. Selecting a subcategory automatically selects its parent category; deselecting a category removes all its subcategories:
+
+![Edit Mode](screenshots/edit-mode.png)
+
 ### Data Management
 
 - **Hierarchical Relationships**: Automatically ensures parent categories are selected when subcategories are chosen
@@ -50,12 +60,12 @@ The app follows the Agility Apps SDK v2 architecture:
 
 The app supports four configuration values that can be set during installation:
 
-| Configuration | Default | Description |
-|--------------|---------|-------------|
-| `categoriesListReferenceName` | `ArticleCategories` | The reference name of the list containing categories |
-| `subcategoriesListReferenceName` | `ArticleSubCategories` | The reference name of the list containing subcategories |
-| `categoryIdsFieldName` | `CategoriesIDs` | The field name where category IDs are stored (comma-separated) |
-| `subcategoryIdsFieldName` | `SubcategoriesIDs` | The field name where subcategory IDs are stored (comma-separated) |
+| Configuration                    | Default                | Description                                                       |
+| -------------------------------- | ---------------------- | ----------------------------------------------------------------- |
+| `categoriesListReferenceName`    | `ArticleCategories`    | The reference name of the list containing categories              |
+| `subcategoriesListReferenceName` | `ArticleSubCategories` | The reference name of the list containing subcategories           |
+| `categoryIdsFieldName`           | `CategoriesIDs`        | The field name where category IDs are stored (comma-separated)    |
+| `subcategoryIdsFieldName`        | `SubcategoriesIDs`     | The field name where subcategory IDs are stored (comma-separated) |
 
 ## Installation
 
@@ -70,6 +80,7 @@ The app supports four configuration values that can be set during installation:
 1. **Clone or download the repository**
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -87,11 +98,13 @@ The app supports four configuration values that can be set during installation:
 ### Registering the App in Agility CMS
 
 1. **Navigate to Organization Dashboard**
+
    - Go to your Agility CMS Organization Dashboard
    - Click on "Apps" → "Private Apps"
    - Click "+ Create Private App"
 
 2. **Provide App Details**
+
    - **Name**: Category Picker (or your preferred name)
    - **URL**: Your publicly accessible app URL (e.g., `https://your-domain.com`)
    - **Description**: Brief description of the app
@@ -121,6 +134,7 @@ When installing the app in your Agility CMS instance, you'll be prompted to conf
 Before using the field, ensure your content definition includes two text fields:
 
 1. **Category IDs Field**: A text field to store comma-separated category IDs
+
    - Field name should match `categoryIdsFieldName` from app configuration
    - Default: `CategoriesIDs`
 
@@ -133,10 +147,12 @@ Before using the field, ensure your content definition includes two text fields:
 Your Agility CMS lists must have the following structure:
 
 **Categories List** (e.g., `ArticleCategories`):
+
 - Must have a `Title` field
 - Items will be identified by their `itemContainerID`
 
 **Subcategories List** (e.g., `ArticleSubCategories`):
+
 - Must have a `Title` field
 - Must have a `ParentCategoryID` or `parentCategoryID` field that references the parent category's `itemContainerID`
 - Items will be identified by their `itemContainerID`
@@ -146,10 +162,12 @@ Your Agility CMS lists must have the following structure:
 ### Adding the Field to a Content Definition
 
 1. **Edit Content Definition**
+
    - Go to "Content" → "Content Definitions" in Agility CMS
    - Select or create the content definition where you want to use the field
 
 2. **Add Custom Field**
+
    - Click "Add Field"
    - Select "Custom Field" type
    - Choose "Sub-Category Picker" from the list of available custom fields
@@ -164,11 +182,13 @@ Your Agility CMS lists must have the following structure:
 ### Using the Field
 
 1. **View Selections** (Read-Only Mode)
+
    - When editing a content item, the field displays currently selected categories and subcategories
    - Selected items are shown with disabled checkboxes
    - Click "Edit" to enter edit mode
 
 2. **Select Categories** (Edit Mode)
+
    - Click "Edit" to enter edit mode
    - Check/uncheck categories and subcategories
    - Selecting a subcategory automatically selects its parent category
@@ -231,11 +251,13 @@ The app uses several methods from the Agility Apps SDK:
 The app stores data as comma-separated values in two separate fields:
 
 **Category IDs Field** (e.g., `CategoriesIDs`):
+
 ```
 "1,2,3"
 ```
 
 **Subcategory IDs Field** (e.g., `SubcategoriesIDs`):
+
 ```
 "4,5,6,7"
 ```
@@ -338,6 +360,7 @@ See the [Apps SDK Documentation](https://agilitycms.com/docs/apps/apps-sdk) for 
 ## Support
 
 For issues or questions:
+
 - Check the [Agility CMS Documentation](https://agilitycms.com/docs/)
 - Review the [Apps SDK Documentation](https://agilitycms.com/docs/apps/apps-sdk)
 - Contact Agility CMS Support
