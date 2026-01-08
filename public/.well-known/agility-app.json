@@ -1,7 +1,7 @@
 {
 	"name": "Category Picker",
 	"version": "1.0.0",
-	"description": "Select categories and subcategories from Agility CMS lists",
+	"description": "A custom field that provides an intuitive hierarchical interface for selecting categories and subcategories from your Agility CMS lists. Automatically maintains parent-child relationships and stores selections as comma-separated IDs.",
 	"configValues": [
 		{
 			"name": "categoriesListReferenceName",
